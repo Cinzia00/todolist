@@ -24,5 +24,6 @@ Route::get('/todolist/{id}', [TodolistController::class,'show']);
 Route::get('/todolist', [TodolistController::class,'index']);
 Route::post('/newtask', [TodolistController::class,'store']);
 Route::post('/editask/{id}', [TodolistController::class,'update']);
+Route::post('/setdone/{id}', [TodolistController::class,'setDone']);
 Route::delete('/todolist/{id}', [TodolistController::class,'destroy']);
 

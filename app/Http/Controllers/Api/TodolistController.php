@@ -63,6 +63,21 @@ class TodolistController extends Controller
             'success' => true,
         ]);
     }
+
+    public function setDone(Request $request, $id) {
+        $data = $request-> validate([
+            'done' => 'required',
+        ]);
+
+        $todo = Todolist::where('id', $id );
+
+        $todo->update($data);
+        
+        return response()->json([
+            'success' => true,
+            'result' => $todo
+        ]);
+    }
 }
 
 

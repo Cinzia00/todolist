@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('todolists', function (Blueprint $table) {
             $table->id();
             $table->string('task', 100);
+            $table->boolean('done')->nullable();
             $table->timestamps();
         });
     }
